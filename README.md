@@ -2,7 +2,7 @@
 
 To initialize project:
 
-Step 1: Clone this repo
+Step 1: Clone this repo<br>
 Step 2:To start asp.net services Go to Control Panel --> Admininstratives Tools --> Services -->asp.net state services. Turn it on if it is off.
 Step 3: Go to control Panel --> Programs and Features --> Turn windows Features on  or off --> .NET Frameword 4.6 Advanced Services --> Check the Asp.net 4.6
 Step 4: To attach Database  SQL SERVER 2014 --> Dataabse --> Attach --> Add --> Add the CarRental.mdf file.
