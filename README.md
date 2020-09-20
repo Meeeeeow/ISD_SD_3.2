@@ -23,7 +23,7 @@ Admin Password : plunderer<br>
 <!***Paypal API***><br>
 1st login(buyer account): <br>
         email:bsx@gmail.com
-        password:12345678
+        password:12345678<br>
 2nd login(personal account):<br>
         email:akihikoi@gmail.com
         password:23456789
