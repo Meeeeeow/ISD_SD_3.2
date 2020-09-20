@@ -1,0 +1,183 @@
+﻿
+.container-fluid{
+    margin-left:0;
+    
+}
+
+.container1{
+    float:right;
+}
+.col-md-5 {
+    background-color: #1B1B1B;
+    height:1300px;
+    
+    
+}
+.col-md-7{
+    background-color: #333333;
+    height: 450px;
+    padding-left:0;
+    padding-right:0;
+}
+#luxury {
+    margin-top: 60px;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    font-size: 40px;
+    padding-top: 0;
+    line-height: 0.2em;
+}
+#luxury1 {
+    margin-top: 60px;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    font-size: 40px;
+    padding-top:0;
+    line-height:0.2em;
+}
+.Space{
+    white-space:pre-line;
+    line-height:40px;
+    margin-bottom:0;
+    
+}
+.offer {
+    white-space: pre-line;
+    margin-top: 5px;
+    color: #666666;
+    font-size: 12px;
+    margin-bottom:0;
+    line-height:2px;
+    padding-top:0;
+    padding-bottom:0;
+    
+}
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+#intro{
+    text-align:left justify;
+    font-size:40px;
+    font-weight:bold;
+    color:white;
+    margin-top:60px;
+    margin-left:80px;
+    height:100%;
+}
+
+.place{
+    white-space:pre-line;
+    font-size:14px;
+    color:#666666;
+    margin-top:0;
+    margin-bottom:0;
+    line-height:10px;
+}
+#second_tag{
+   height:100%;
+   position:relative; 
+}
+#top-left {
+    position: absolute;
+    display: inline-block;
+    top: 2rem;
+    left : 5rem;
+    text-align: left justify;
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+
+
+}
+.car-price{
+    position:absolute;
+    z-index:-1;
+}
+
+#about {
+    text-align: left justify;
+    font-size: 40px;
+    font-weight: bold;
+    color: #333333;
+    margin-top: 60px;
+    margin-left: 80px;
+}
+
+@media screen and (min-width: 992px) and (max-width: 1300px){
+    #luxury , #luxury1{
+        margin-top: 30px;
+        font-size: 30px;
+        
+    }
+    #intro{
+        font-size: 30px;
+        margin-top:30px;
+        margin-left:40px;  
+    }
+    .place{
+        line-height: 8px;
+        margin-bottom: 1rem;
+        
+    }
+    .col-md-7{
+        height:360px;
+    }
+    #top-left{
+        font-size: 30px;
+    }
+    #about {
+        font-size: 30px;
+        margin-top: 30px;
+        margin-left: 40px;
+    }
+    #second_tag{
+        height:100%;
+    }
+    .car-price{
+        height:100%;
+        width:100%;
+    }
+}
+@media screen and (min-width: 560px) and (max-width: 991px) {
+    #luxury, #luxury1 {
+        margin-top: 15px;
+        font-size: 25px;
+    }
+
+    #intro {
+        font-size: 25px;
+        margin-top: 15px;
+        margin-left: 20px;
+    }
+
+    .place {
+        line-height: 6px;
+        margin-bottom: .6rem;
+    }
+
+    .col-md-7 {
+        height: 300px;
+    }
+
+    #top-left {
+        font-size: 15px;
+    }
+
+    #about {
+        font-size: 15px;
+        margin-top: 15px;
+        margin-left: 25px;
+    }
+    #second_tag,#third_tag,#intro{
+        height: 100%;
+    }
+
+    .car-price {
+        height: 100%;
+        width: 100%;
+    }
+} 

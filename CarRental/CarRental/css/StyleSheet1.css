@@ -1,0 +1,33 @@
+﻿.footer{
+    position:fixed;
+    left: 0;
+    bottom: 0;
+}
+.footerlinks {
+    color: #ffffff;
+    text-decoration: none !important;
+}
+.footerlinks:hover {
+        color: #ffd800;
+}
+
+#footer1 {
+    background: #21d192;
+}
+
+
+
+ul{
+    list-style:none;
+}
+#playlist li a{
+    color:black;
+    text-decoration:none;
+}
+#playlist .current-song a{
+    color:blue;
+}
+#audioplayer{
+    width:100%;
+}
+

@@ -1,0 +1,277 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Home.master.cs" Inherits="CarRental.Home" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    
+    <%--bootstrap css--%>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <%--datatbles css--%>
+    <link href="Datatables/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <%--fontawesome css--%>
+    <link href="fontawesome/css/all.css" rel="stylesheet" />
+    <%--custom css--%>
+    <link href="css/StyleSheet1.css" rel="stylesheet" />
+     <%--twitter-bootstrap css--%>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css" rel="stylesheet" />
+    <%--bootstrap4 css--%>
+    <link href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css" rel ="stylesheet" />
+    <%--jquery js--%>
+    <script src="bootstrap/js/jquery-3.4.1.slim.min.js"></script>
+    <%--popper js--%>
+    <script src="bootstrap/js/popper.min.js"></script>
+    <%--bootstrap js--%>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <%--datatable js--%>
+    <script src="Datatables/js/jquery.dataTables.min.js"></script>
+     <%--datatable bootstrap js--%>
+    <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
+     
+   
+    <asp:ContentPlaceHolder  ID="head"  runat="server">
+       
+    </asp:ContentPlaceHolder>
+</head>
+   
+<body>
+    
+    <form id="form1" runat="server">
+        <div >
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="Homepage.aspx">
+                    <img src="images/logo.jpg" width="30" height="30" /><!--logo-->
+                    Car Rental
+                </a><!--navigation bar ready set go!!!!-->
+               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                       <li class="nav-item active">
+                            <a class="nav-link"  href="Homepage.aspx">Home</a>
+                       </li>
+                       <li class="nav-item active">
+                           <a class="nav-link" href="AboutUs.aspx">About Us</a> 
+                       </li>
+                        <li class="nav-item active">
+                            <div class="dropdown for-message">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" 
+                                    id="message"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="far fa-bell"></i>
+                                    <span class="count bg-primary"><asp:Label ID="notification1" runat="server"></asp:Label></span>
+
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="message" style="border:1px solid;">
+                                    <p class="red">You have <asp:Label ID="notification2" runat="server"></asp:Label> mails</p>
+                                    <asp:Repeater ID="repeater1" runat="server">
+                                        <ItemTemplate>
+                                            <a class="dropdown-item media " href="#" style="border:1px solid black;">
+                                                <span class="message media-body">
+                                                    <span class="name float-left"><%# Eval("UserID") %></span>
+                                                    
+                                                    <p><%# GetTwentyCharacter(Eval("Problem")) %></p>
+                                                </span>
+                                            </a>
+                                        </ItemTemplate>
+                                    </asp:Repeater>
+                                    
+                                </div>
+                            </div>     
+                       </li>
+                    </ul>
+
+                    <ul class="navbar-nav">
+                         <li class="nav-item active">
+                            <a class="nav-link"  href="SavedCart.aspx"> 
+                                <i class="fas fa-shopping-cart"></i>
+                                <span class="count bg-primary"><asp:Label ID="savedcartcount" runat="server"></asp:Label></span>
+                            </a>                                        
+                        </li>
+                            
+                        
+                        <li class="nav-item active">
+                            <a class="nav-link"  href="Services.aspx">Service Details </a>                                        
+                        </li>
+                        <li class="nav-item active">
+                            <asp:LinkButton class="nav-link" ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">User Login</asp:LinkButton>
+                        </li>
+                        <li class="nav-item active">
+                            <asp:LinkButton class="nav-link" ID="LinkButton2" runat="server" OnClick="LinkButton2_Click">Sign Up</asp:LinkButton>
+                        </li>
+                        <li class="nav-item active">
+                            <asp:LinkButton class="nav-link" ID="LinkButton3" runat="server" OnClick="LinkButton3_Click" Visible="False">Logout</asp:LinkButton>
+                        </li>
+                        <li class="nav-item active">
+                            <asp:LinkButton class="nav-link" ID="LinkButton5" runat="server" Visible="False" OnClick="LinkButton5_Click">Hello User</asp:LinkButton>
+                        </li>
+                    </ul>
+                </div>                
+            </nav>
+        </div>
+        <!--navigation bar finish line gooo goo!!-->
+        
+        <!--Main content placeholder-->
+        <div>
+
+            <asp:ContentPlaceHolder  ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <!--Main content placeholder-->
+        <!--footer-->
+        
+       <footer class="page-footer">
+           
+            <div id="footer1" class="container-fluid">
+                <div class="row">
+                    <audio preload="auto"  id ="audioplayer" controls onended ="myFunc()" >
+                        <source src="Songs/istilldreamofyou.mp3" />
+                    </audio>
+                    
+                    
+         </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                        <p>
+                            <asp:LinkButton class="footerlinks" ID="LinkButton7" runat="server" OnClick="LinkButton7_Click1">Admin Login</asp:LinkButton>
+                            &nbsp;
+                            <asp:LinkButton class="footerlinks" ID="LinkButton11" runat="server" OnClick="LinkButton11_Click" Visible="False">Brand Management</asp:LinkButton>
+                            &nbsp;
+                            <asp:LinkButton class="footerlinks" ID="LinkButton12" runat="server" OnClick="LinkButton12_Click" Visible="False">Model Management</asp:LinkButton>
+                            &nbsp;
+                             <asp:LinkButton class="footerlinks" ID="ServiceButton" runat="server" OnClick="ServiceButton_Click" Visible="False">Service Management</asp:LinkButton>
+                            &nbsp;
+                            <asp:LinkButton class="footerlinks" ID="LinkButton8" runat="server" OnClick="LinkButton8_Click" Visible="False">Car Inventory</asp:LinkButton>
+                            &nbsp;
+                            <asp:LinkButton class="footerlinks" ID="LinkButton9" runat="server" Visible="False" OnClick="LinkButton9_Click">Payment Info</asp:LinkButton>
+                            &nbsp;
+                             <asp:LinkButton class="footerlinks" ID="LinkButton10" runat="server" OnClick="LinkButton10_Click" Visible="False">Member Management</asp:LinkButton>
+                        </p>
+ 
+                    </div>
+ 
+                </div>
+            </div>
+            <div id="footer2" class="container-fluid text-center text-md-left mt-5">
+                    <!-- Grid row -->
+                    <div class="row mt-3 dark-grey-text">
+                        <div class="col-md-3 col-lg-4 col-xl-3 mb-4">
+                            <h6 class="text-uppercase font-weight-bold">Car Rental</h6>
+                            <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                            <p>Rental Website at your doorstep.</p>
+
+                    </div>
+      <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            <h6 class="text-uppercase font-weight-bold">Useful Links</h6>
+            <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+            <p>
+                <a class="dark-grey-text" href="AboutUs.aspx">Contact Us</a> 
+            </p>
+            <p>
+              <a class="dark-grey-text" href="Services.aspx">Services</a>
+            </p>
+            <p>
+              <a class="dark-grey-text" href="ViewCarsUser.aspx">Cars List</a>
+            </p>
+      </div>
+     
+      <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+        <h6 class="text-uppercase font-weight-bold">Join Us</h6>
+        <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <p>
+          <a class="dark-grey-text" href="UserSignUp.aspx">Register Now!</a>
+        </p>
+        <p>
+          <a class="dark-grey-text" href="UserLogin">Have an account!</a>
+        </p>
+        <p>
+          <a class="dark-grey-text" href="AboutUs.aspx">Know About Us</a>
+        </p>
+      </div>
+      
+      <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <h6 class="text-uppercase font-weight-bold">Contact</h6>
+            <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+            <p>
+              <i class="fas fa-home mr-3"></i>Mirpur,Dhaka,1216</p>
+            <p>
+              <i class="fas fa-envelope mr-3"></i> abc@yahoo.com</p>
+            <p>
+              <i class="fas fa-phone mr-3"></i> + 88025645</p>
+            <p>
+              <i class="fas fa-print mr-3"></i> + 01999456004</p>
+
+      </div>
+    </div>
+            </div>
+           <div class="footer-copyright text-center text-black-50 py-3">© 2020 Copyright:
+                
+            </div>
+ 
+        </footer>
+        
+    </form>
+   <script src="Scripts/particles.js"></script>
+     <script src="Scripts/index.js"></script> 
+<script>
+    
+function setCookie(c_name,value,exdays)
+{
+    var exdate=new Date();
+    exdate.setDate(exdate.getDate() + exdays);
+    var c_value=escape(value) + ((exdays==null) ? "" : "; expires="+exdate.toUTCString());
+    document.cookie=c_name + "=" + c_value;
+}
+
+function getCookie(c_name)
+{
+    var i,x,y,ARRcookies=document.cookie.split(";");
+    for (i=0;i<ARRcookies.length;i++)
+    {
+      x=ARRcookies[i].substr(0,ARRcookies[i].indexOf("="));
+      y=ARRcookies[i].substr(ARRcookies[i].indexOf("=")+1);
+      x=x.replace(/^\s+|\s+$/g,"");
+      if (x==c_name)
+        {
+        return unescape(y);
+        }
+      }
+}
+
+var song = document.getElementsByTagName('audio')[0];
+var played = false;
+var tillPlayed = getCookie('timePlayed');
+function myFunc(){    
+document.getElementsByTagName('audio')[0].src = "Songs/mars.mp3";
+song = document.getElementsByTagName('audio')[0];
+played = false;
+tillPlayed = getCookie(0); 
+setInterval(update,200);
+}
+function update()
+{
+    if(!played){
+        if(tillPlayed){
+        song.currentTime = tillPlayed;
+        song.play();
+        played = true;
+        }
+        else {
+                song.play();
+                played = true;
+        }
+    }
+
+    else {
+    setCookie('timePlayed', song.currentTime);
+    }
+}
+setInterval(update,200);
+
+</script>
+ 
+</body>
+</html>

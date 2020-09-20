@@ -1,0 +1,31 @@
+﻿*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+body{
+    background:#00ffff;
+}
+.horizontal
+{
+    
+    border:1px solid green;
+    opacity:0.4;
+    width:25px;
+}
+.col-lg-4
+{
+    min-height:36vh;
+    
+}
+.col-lg-4:hover{
+    padding:10px;
+    border-style:inset;
+    border-color:#ffffff;
+    border-radius:4px;
+    background:#ffffff;
+}
+.process
+{
+    min-height:50vh;
+}
