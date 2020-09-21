@@ -7,7 +7,7 @@ Step 2:To start asp.net services Go to Control Panel --> Admininstratives Tools 
 Step 3: Go to control Panel --> Programs and Features --> Turn windows Features on  or off --> .NET Frameword 4.6 Advanced Services --> Check the Asp.net 4.6<br>
 Step 4: To attach Database  SQL SERVER 2014 --> Dataabse --> Attach --> Add --> Add the CarRental.mdf file.<br>
         If errors faced Right click the .mdf and .ldf files Properties --> Security --> Edit permissions -->  Check Full control<br>
-Step 5: Inside the project Go to Web.Config --> <Connection string> tag --> Change the SQL SERVER name with your server name<br>
+Step 5: Inside the project Go to Web.Config --> Connection string tag --> Change the SQL SERVER name with your server name<br>
   
   <*********FROM WHERE TO RUN*********>
   
